@@ -1,0 +1,73 @@
+{
+  "name": "smansage/dapodik-sdk",
+  "description": "Modern PHP & Laravel SDK untuk WebService Dapodik Kemendikdasmen",
+  "keywords": [
+    "dapodik",
+    "dapodik-api",
+    "dapodik-sdk",
+    "kemendikdasmen",
+    "webservice",
+    "laravel",
+    "php",
+    "smansage"
+  ],
+  "homepage": "https://www.instagram.com/smansagewithai/",
+  "support": {
+    "issues": "https://github.com/ardianryan/dapodik-sdk-php/issues",
+    "source": "https://github.com/ardianryan/dapodik-sdk-php"
+  },
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Ryan Ardian",
+      "email": "inisaya@ardianryan.com",
+      "role": "Developer"
+    },
+    {
+      "name": "SMA Negeri 1 Gedeg",
+      "homepage": "https://www.instagram.com/smansagewithai/",
+      "role": "Publisher"
+    }
+  ],
+  "require": {
+    "php": "^8.1|^8.2|^8.3|^8.4",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.8",
+    "illuminate/collections": "^10.0|^11.0|^12.0",
+    "illuminate/support": "^10.0|^11.0|^12.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5|^11.0",
+    "orchestra/testbench": "^8.0|^9.0|^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Smansage\\Dapodik\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Smansage\\Dapodik\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Smansage\\Dapodik\\Laravel\\DapodikServiceProvider"
+      ],
+      "aliases": {
+        "Dapodik": "Smansage\\Dapodik\\Laravel\\Facades\\Dapodik"
+      }
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {}
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
