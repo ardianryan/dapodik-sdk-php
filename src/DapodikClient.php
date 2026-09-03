@@ -36,8 +36,16 @@ class DapodikClient
             throw new DapodikException("NPSN wajib diisi");
         }
 
+        if (preg_match('/[\r\n]/', (string) $config['npsn'])) {
+            throw new DapodikException("NPSN tidak boleh mengandung karakter newline");
+        }
+
         if (empty($config['token'])) {
             throw new DapodikException("Token WebService Dapodik wajib diisi");
+        }
+
+        if (preg_match('/[\r\n]/', (string) $config['token'])) {
+            throw new DapodikException("Token tidak boleh mengandung karakter newline (CRLF injection prevention)");
         }
 
         $this->npsn = trim((string) $config['npsn']);
@@ -80,6 +88,9 @@ class DapodikClient
     public function request(string $method, string $endpoint, array $queryParams = [], mixed $body = null): Collection
     {
         $cleanEndpoint = ltrim($endpoint, '/');
+        if (str_contains($cleanEndpoint, '..') || str_contains($cleanEndpoint, '\\')) {
+            throw new DapodikException("Endpoint tidak valid (path traversal detected)");
+        }
         $query = array_merge(['npsn' => $this->npsn], $queryParams);
 
         $options = [
