@@ -182,6 +182,7 @@ echo "Total seluruh siswa: " . $semuaSiswa->count() . "\n";
 | **`/getGtk`** | `Dapodik::getGtk($params)` | `Dapodik::gtk()` | Data Guru & Tenaga Kependidikan (GTK) |
 | **`/getRombonganBelajar`** | `Dapodik::getRombonganBelajar($sem)` | `Dapodik::rombel($sem)` | Rombel beserta anggota & mapel |
 | **`/getPesertaDidik`** | `Dapodik::getPesertaDidik($params)` | `Dapodik::pd()` | Data seluruh siswa lengkap |
+| **`/getPrasarana`** | `Dapodik::getPrasarana($params)` | `Dapodik::prasarana()` | Data sarana & prasarana (Tanah, Gedung & Ruang) |
 | **`/getMataPelajaran`** | `Dapodik::getMataPelajaran($params)`| `Dapodik::mataPelajaran()`| Referensi mata pelajaran nasional |
 | **`/getMatevNilai`** | `Dapodik::getMatevNilai($params)` | `Dapodik::matevNilai()` | Referensi mata evaluasi nilai |
 | **`/postNilai`** | `Dapodik::postNilai($body, $params)` | - | Pengiriman nilai rapor (HTTP POST) |

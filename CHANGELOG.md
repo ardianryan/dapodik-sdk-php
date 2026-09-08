@@ -6,6 +6,14 @@ Format changelog ini mengacu pada [Keep a Changelog](https://keepachangelog.com/
 
 ---
 
+## [1.1.0] - 2026-09-08
+
+### Ditambahkan
+- **Dukungan Endpoint Resmi `/getPrasarana`**:
+  - Penambahan method `getPrasarana(array $params = []): Collection` dan alias `prasarana()` pada `DapodikClient`.
+  - Penambahan PHPDoc facade method pada `Smansage\Dapodik\Laravel\Facades\Dapodik`.
+  - Penambahan unit test PHPUnit dengan 100% lulus.
+
 ## [1.0.0] - 2026-08-30
 
 ### Ditambahkan
