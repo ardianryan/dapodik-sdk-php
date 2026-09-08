@@ -169,4 +169,33 @@ class DapodikClientTest extends TestCase
         $this->assertEquals(3, $all->count());
         $this->assertEquals(['A', 'B', 'C'], $all->pluck('nama')->all());
     }
+
+    public function test_get_prasarana_and_alias()
+    {
+        $prasaranaJson = json_encode([
+            'status' => 'success',
+            'results' => 1,
+            'rows' => [
+                [
+                    'id_tanah' => 't-1',
+                    'nama' => 'Tanah Sekolah',
+                    'bangunan' => [
+                        ['id_bangunan' => 'b-1', 'nama' => 'Gedung A']
+                    ]
+                ]
+            ]
+        ]);
+
+        $client = $this->createMockClient([
+            new Response(200, ['Content-Type' => 'application/json'], $prasaranaJson),
+            new Response(200, ['Content-Type' => 'application/json'], $prasaranaJson),
+        ]);
+
+        $res1 = $client->getPrasarana(['page' => 1]);
+        $this->assertEquals(1, $res1->count());
+        $this->assertEquals('Tanah Sekolah', $res1->first()['nama']);
+
+        $res2 = $client->prasarana();
+        $this->assertEquals('t-1', $res2->first()['id_tanah']);
+    }
 }

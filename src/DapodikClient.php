@@ -205,6 +205,14 @@ class DapodikClient
     }
 
     /**
+     * Menarik data Prasarana (Tanah, Bangunan, Ruang Sekolah)
+     */
+    public function getPrasarana(array $params = []): Collection
+    {
+        return $this->request('GET', 'getPrasarana', $params);
+    }
+
+    /**
      * Mengirim data via HTTP POST ke WebService Dapodik
      */
     public function post(string $endpoint, mixed $body, array $params = []): Collection
@@ -327,6 +335,11 @@ class DapodikClient
     public function pd(array $params = []): Collection
     {
         return $this->getPesertaDidik($params);
+    }
+
+    public function prasarana(array $params = []): Collection
+    {
+        return $this->getPrasarana($params);
     }
 
     public function mataPelajaran(array|string $params = []): Collection

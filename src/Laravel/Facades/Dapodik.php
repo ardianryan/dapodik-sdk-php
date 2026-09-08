@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static Collection getGtk(array $params = [])
  * @method static Collection getRombonganBelajar(array|string $params = [])
  * @method static Collection getPesertaDidik(array $params = [])
+ * @method static Collection getPrasarana(array $params = [])
  * @method static Collection getMataPelajaran(array|string $params = [])
  * @method static Collection getMatevNilai(array $params = [])
  * @method static Collection post(string $endpoint, mixed $body, array $params = [])
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static Collection gtk(array $params = [])
  * @method static Collection rombel(array|string $params = [])
  * @method static Collection pd(array $params = [])
+ * @method static Collection prasarana(array $params = [])
  * @method static Collection mataPelajaran(array|string $params = [])
  * @method static Collection matevNilai(array $params = [])
  *
