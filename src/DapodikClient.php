@@ -308,9 +308,7 @@ class DapodikClient
         return collect($allItems);
     }
 
-    // =========================================================================
     // Aliases (Kompatibel dengan pustaka PHP adereksisusanto)
-    // =========================================================================
 
     public function sekolah(array|string $params = []): Collection
     {
